@@ -1,0 +1,168 @@
+/* App.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #E8EBE0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.news1234 {
+  display: flex;
+  align-items: flex-start;
+}
+
+.star {
+  color: #ffd700; /* Gold color for the star */
+  margin-right: 5px; /* Space between star and headline */
+  font-size: 1.2em; /* Adjust size as needed */
+}
+
+.heading {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+  animation: fadeIn 1.5s ease-in-out;
+}
+.heading-image {
+  width: 100%; /* Adjust as necessary */
+  max-width: 600px; /* Set a max width for the image */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 30px; /* Space below the image */
+}
+
+
+/* Flexbox to display news cards in a horizontal line */
+.news-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.news {
+  width: 300px;
+  height: 400px;
+  margin: 10px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow-y: hidden; /* Hide vertical overflow for the whole card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff; /* Text color */
+  position: relative;
+  scroll-snap-align: start; /* Align cards to start when scrolling */
+}
+
+.news:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Sticky headline */
+.upper {
+  position: sticky;
+  top: 0; /* Stick to the top of the lower section */
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly transparent background */
+  z-index: 1; /* Ensure it stays above the headlines */
+  padding: 10px 0; /* Padding for the title */
+}
+
+.upper h2 {
+  font-size: 1.5em;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+}
+
+/* Lower part with headlines */
+.lower {
+  height: calc(100% - 50px); /* Reserve space for the title */
+  overflow-y: auto; /* Allow vertical scrolling for headlines */
+}
+
+.lower ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.headline {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.3s ease;
+  padding: 5px 0; /* Add padding for better spacing */
+}
+
+.headline:hover {
+  color: #000; /* Change color on hover */
+}
+
+/* Different colors for each news card */
+.ETnews {
+  background-color: #a7280c; /* Orange */
+}
+
+.THnews {
+  background-color: #0a4c7f; /* Blue */
+}
+
+.AJnews {
+  background-color: #81094d; /* Pink */
+}
+
+.Gnews {
+  background-color: #056917; /* Green */
+}
+
+/* Animations for fading and sliding in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar styles for invisibility */
+.lower::-webkit-scrollbar {
+  width: 0; /* Remove horizontal scrollbar */
+  height: 0; /* Remove vertical scrollbar */
+}
+
+.news::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar */
+}
+
+/* Custom scrollbar inside the news cards */
+.news::-webkit-scrollbar {
+  width: 8px;
+}
+
+.news::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Make the scrollbar thumb transparent */
+}
+
+.news::-webkit-scrollbar-track {
+  background-color: transparent; /* Make the scrollbar track transparent */
+}
